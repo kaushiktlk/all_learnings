@@ -3,3 +3,4 @@
  - ctrl + ` : to show/hide the terminal
  - ctrl + / : to comment or uncomment
  - alt + arrow keys(up or down) : to move the current line above or below
+ - ctrl + B : to show or hide the sidebar (file explorer, extensions etc)
