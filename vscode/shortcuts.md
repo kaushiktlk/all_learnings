@@ -7,3 +7,4 @@
  - ctrl + P : Opens the command palette
  - ctrl+C followed by ctrl+v without selecting anything: Copy the current line and paste it above the current line.
  - ctrl + shift + K: delete the current line
+ - ctrl + shift + I: format the code (indentation)
