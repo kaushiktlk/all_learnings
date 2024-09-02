@@ -8,3 +8,4 @@
  - ctrl+C followed by ctrl+v without selecting anything: Copy the current line and paste it above the current line.
  - ctrl + shift + K: delete the current line
  - ctrl + shift + I: format the code (indentation)
+ - ctrl + D: to select the next occurrence of the same word on which the cursor is on. This is for modifying multiple occurrences of the same word in a single shot.
