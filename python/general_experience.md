@@ -1,7 +1,8 @@
 # Python General Experience
 
- - **Question:** While creating a docker image for any python application, how are the dependencies mentioned? How do people make sure that nothing is left out? Do they keep track of it manually?
- - **Answer:** Yes and No.
+ 1. **Question:** While creating a docker image for any python application, how are the dependencies mentioned? How do people make sure that nothing is left out? Do they keep track of it manually?
+
+    **Answer:** Yes and No.
 
     using requirements.txt: In development environments, the packages are normally installed using ```pip install``` commands. When the time comes for packaging the application, the ```pip freeze > requirements.txt``` command is used to automatically generate the requirements.txt file needed to create the docker image. This gives a snapshot of all the modules and their version. It has all the top level dependencies and also their sub-dependencies. But using this method might be difficult to maintain because it contains even some transitive dependencies and dependencies used in development which are not needed in production. But there is no way to identify which is which. In this approach, the dependencies are not tracked manually but automatically generated using pip freeze command.
 
