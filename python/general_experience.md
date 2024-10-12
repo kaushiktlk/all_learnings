@@ -16,3 +16,25 @@
       - ```l2 = l1[:]``` creates a **shallow copy** of the list. Copies the outer list structure but not nested objects (references are copied).
       - ```import copy; new_object = copy.deepcopy(original_object)``` creates a **deep copy**. It creates a new object and recursively copies all nested objects. So, any changes to the copy don't affect the original.
       - BONUS: ```l1 = l2``` creates a **reference copy or assignment copy**, not a new list. Both variables point to the same list object in memory. Any changes to the list via one variable affect the other.
+   
+ 1. **Question:** Explain how global keyword is used in python.
+
+    **Answer:** Global Variables can directly be accessed(read) inside a function
+    ```
+    x = 'Global'
+    def read_global():
+      print(x)            #This prints 'Global'
+    ```
+
+    But global keyword should be used if the global variable should be **modified** inside the function.
+    ```
+    x = 'Global'
+    def modify_global(): x='Tried'; print(x)
+    def actually_modify_global(): global x; x='Done'; print(x)
+    print(x)                    # prints Global
+    modify_global()             # prints Tried inside the function
+    print(x)                    # prints Global because global variable is not modified
+    actually_modify_global()    # prints Done inside the function
+    print(x)                    # prints Done outside the function as well because
+                                # the global variable was modified inside the function
+    ```
