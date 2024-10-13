@@ -38,3 +38,40 @@
     print(x)                    # prints Done outside the function as well because
                                 # the global variable was modified inside the function
     ```
+
+ 1. An **Iterator** is an object that implements ```__iter__```, which is expected to return an iterator object.
+
+    An **iterator** object implements ```__next__``` which  is expected to return the next element of the iterable object that returned it and raise a StopIteration exception when no more elements are available.
+
+ 1. A **generator** in Python is a special type of iterable, defined by a function that uses the yield keyword instead of return. It generates values on-the-fly rather than storing them all in memory.
+    ```
+    def count_to_n(n):
+      i = 1
+      while i <= n:
+        yield i
+        i += 1
+    genn = count_to_n(5)
+    print(next(genn))    # prints 1
+    print(next(genn))    # prints 2
+    .
+    .
+    ```
+    
+    Another way to create generators is to use the generator expression which is similar to a list comprehension but () are used instead of [].
+    ```
+    sq = (x*x for x in [1,2,3,4,5])
+    print(next(sq))      # prints 1
+    print(next(sq))      # prints 4
+    .
+    .
+    ```
+ 1. In python class methods and static methods are associated with the class rather than an instance of the class. Here’s a more detailed comparison of **class method** vs **static method**:
+
+    | **Aspect**          | **Class Method**                              | **Static Method**                         |
+    |---------------------|-----------------------------------------------|-------------------------------------------|
+    | **Definition**       | Defined with `@classmethod` decorator.        | Defined with `@staticmethod` decorator.   |
+    | **Access to Class**  | Takes `cls` as the first argument and has access to class-level data and methods. | Does **not** take `cls` or `self` as arguments, has no access to class or instance. |
+    | **Usage**            | Used when a method needs to access or modify class state. | Used for utility functions that don’t need class or instance context. |
+    | **Call**             | Can be called on class or instance.           | Can be called on class or instance.       |
+    | **Example**          | `@classmethod def method(cls): pass`          | `@staticmethod def method(): pass`        |
+
