@@ -1,3 +1,0 @@
-- Commands to create a new pdf from the existing pages of a pdf file:
-   - pdftk yourfile.pdf cat 1-5 output part1.pdf
-   - pdftk yourfile.pdf cat 6 output part2.pdf
